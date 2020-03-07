@@ -19,3 +19,5 @@ class Product(models.Model):
     def pub_date_show(self):
         return self.pub_date.strftime('%d %B %Y')
 
+    def summary(self):
+        return self.body[:100]

@@ -10,7 +10,7 @@ class Product(models.Model):
     votes_total = models.IntegerField(default=1)
     image = models.ImageField(upload_to='images/')
     icon = models.ImageField(upload_to='icons/')
-    body = models.CharField(max_length=400)
+    body = models.CharField(max_length=1000)
     hunter = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -20,4 +20,4 @@ class Product(models.Model):
         return self.pub_date.strftime('%d %B %Y')
 
     def summary(self):
-        return self.body[:100]
+        return self.body[:244]
